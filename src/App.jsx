@@ -1,18 +1,15 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import HomePage from './pages/HomePage';
-import SpecificMoviePage from './pages/SpecificMoviePage';
 
+import { BrowserRouter as Router } from 'react-router-dom';
+import CreateRoutes from './routes/AllRoutes.jsx';
 function App() {
   return (
     <Router>
       <div className="App">
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/movie/:id" element={<SpecificMoviePage />} />
-        </Routes>
+        <CreateRoutes />
       </div>
     </Router>
   );
 }
 
 export default App;
+
