@@ -1,14 +1,20 @@
-function MovieCard({ movie }) {
+import { Link } from "react-router-dom"
+
+
+import Title from './Title';
+import Author from './Author';
+import Overview from './Overview';
+import ReadMoreButton from './ReadMoreButton';
+
+export default function MovieCard({ book }) {
     return (
-        <div className="card" style={{ width: '18rem' }}>
-            <img src={movie.poster} className="card-img-top" alt={movie.title} />
+        <div className="movie card">
             <div className="card-body">
-                <h5 className="card-title">{movie.title}</h5>
-                <p className="card-text">{movie.description}</p>
-                <a href={`/movie/${movie.id}`} className="btn btn-primary">Dettagli</a>
+                <Title title={movie.title} />
+                <Author author={movie.author} />
+                <Overview overview={movie.overview} />
+                <ReadMoreButton movieId={movie.id} />
             </div>
         </div>
     );
 }
-
-export default MovieCard;
