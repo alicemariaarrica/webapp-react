@@ -6,7 +6,7 @@ import Author from './Author';
 import Overview from './Overview';
 import ReadMoreButton from './ReadMoreButton';
 
-export default function MovieCard({ book }) {
+export default function MovieCard({ movie }) {
     return (
         <div className="movie card">
             <div className="card-body">
