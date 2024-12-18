@@ -1,5 +1,7 @@
 import React from 'react';
 import MovieCard from '../components/MovieCard';
+import CreateHeader from '../components/Header';
+import CreateFooter from '../components/Footer';
 
 export default function CreateHomePage() {
     const movies = [

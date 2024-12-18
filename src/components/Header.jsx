@@ -1,4 +1,4 @@
-export default function Header() {
+export default function CreateHeader() {
     return (
         <>
             <header className="d-flex align-items-center justify-content-between p-2 bg-primary mb-4">
