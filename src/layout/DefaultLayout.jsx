@@ -1,7 +1,7 @@
 
 import { Outlet } from 'react-router-dom';
-import CreateHeader from '../components/Header';
-import CreateFooter from '../components/Footer';
+import CreateHeader from '../components/Header.jsx';
+import CreateFooter from '../components/Footer.jsx';
 
 export default function CreateDefaultLayout() {
     return (

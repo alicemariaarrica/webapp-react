@@ -1,23 +1,33 @@
-import React from 'react';
+
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
 function ShowSpecificMoviePage() {
     const { id } = useParams();
+    const [movie, setMovie] = useState(null);
 
-    // Data del film
-    const movieDetails = {
-        title: `Film ${id}`,
-        description: `Descrizione dettagliata del Film ${id}`,
-        director: 'Regista',
-        releaseDate: '2024-12-15'
-    };
+    useEffect(() => {
+        const fetchMovieDetails = async () => {
+
+            const movieDetails = {
+                id,
+                title: `Film ${id}`,
+                description: `Descrizione dettagliata del Film ${id}`,
+                year: 2024
+            };
+            setMovie(movieDetails);
+        };
+
+        fetchMovieDetails();
+    }, [id]);
+
+    if (!movie) return <div>Loading...</div>;
 
     return (
         <div className="container mt-4">
-            <h1>{movieDetails.title}</h1>
-            <p>{movieDetails.description}</p>
-            <p><strong>Regista:</strong> {movieDetails.director}</p>
-            <p><strong>Data di uscita:</strong> {movieDetails.releaseDate}</p>
+            <h1>{movie.title}</h1>
+            <p>{movie.description}</p>
+            <p><strong>Anno:</strong> {movie.year}</p>
         </div>
     );
 }
